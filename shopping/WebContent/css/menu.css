@@ -1,0 +1,23 @@
+@charset "UTF-8";
+
+#wrapper {
+  width: 1000px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  overflow: hidden;
+}
+
+.top-column {
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+.left-column {
+  width: 20%;
+}
+
+.right-column {
+　　margin-top: 70px;
+  width: 80%;
+}

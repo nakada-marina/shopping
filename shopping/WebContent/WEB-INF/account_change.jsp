@@ -1,0 +1,33 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<%@ page import="bean.AccountBean" %>
+<%
+// Get_SessionScope
+AccountBean account = (AccountBean)session.getAttribute("account");
+%>
+<h4>アカウント情報を変更します</h4>
+<div style="float:left;">E-mail :<br>姓 ：<br>名:<br>郵便番号：<br>住所：<br>電話番号：<br>管理者:</div>
+<form action="/shopping/account_change" method="post">
+<div>
+	${account.getE_mail()}<br>
+	<input type="text" value="${account.getFamily_name()}" name="family_name" placeholder="姓" maxlength="15"><br>
+	<input type="text" value="${account.getName()}" name="name" placeholder="名" maxlength="15"><br>
+	<input type="text" value="${account.getPostal_code()}" name="postal_code" placeholder="郵便番号" maxlength="15"><br>
+	<input type="text" value="${account.getAddress()}" name="address" placeholder="住所" maxlength="15"><br>
+	<input type="text" value="${account.getPhone_number()}" name="phone_number" placeholder="電話番号" maxlength="15"><br>
+	<input type="checkbox" id="authority" disabled><br><br></div>
+<button name="account_change" value="account_change">変更</button>
+<input type="text" value="${account.getUser_id()}" name="id" placeholder="姓" maxlength="15" hidden><br>
+</form>
+<form action="/shopping/index" method="post">
+<button name="buttonType" value="account_management">戻る</button>
+</form>
+<script type="text/javascript">
+const authority = '<%=account.getAuthority() %>';
+if(authority == 1){
+	document.getElementById("authority").checked = true;
+}
+</script>
