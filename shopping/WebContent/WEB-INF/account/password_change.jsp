@@ -1,5 +1,12 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>ショッピングサイト</title>
+<link href="${pageContext.request.contextPath}\css\menu.css" rel="stylesheet">
+</head>
+<body>
 <h4>パスワードを再設定します。</h4>
 <div style="float:left;">現在のパスワード :<br>パスワード :&nbsp;&nbsp;&nbsp;</div>
 <form action="/shopping/password_change" method="post">
@@ -12,3 +19,7 @@
 <form action="/shopping/index" method="post">
 <button name="buttonType" value="account_management">戻る</button>
 </form>
+		</div>
+	</div>
+</body>
+</html>

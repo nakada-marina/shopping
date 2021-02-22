@@ -8,6 +8,17 @@
 // Get_SessionScope
 AccountBean account = (AccountBean)session.getAttribute("account");
 %>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>ショッピングサイト</title>
+<link href="${pageContext.request.contextPath}\css\menu.css" rel="stylesheet">
+</head>
+<body>
+	<div id="wrapper">
+   	 <div class="top-column"><%@ include file="/WEB-INF/header.jsp"%></div>
+		<div class="left-column"><%@ include file="/WEB-INF/menu.jsp"%></div>
+		<div class="right-column">
 <h4>アカウント情報を変更します</h4>
 <div style="float:left;">E-mail :<br>姓 ：<br>名:<br>郵便番号：<br>住所：<br>電話番号：<br>管理者:</div>
 <form action="/shopping/account_delete" method="post">
@@ -26,6 +37,10 @@ AccountBean account = (AccountBean)session.getAttribute("account");
 <form action="/shopping/index" method="post">
 <button name="buttonType" value="account_management">戻る</button>
 </form>
+		</div>
+	</div>
+</body>
+</html>
 <script type="text/javascript">
 const authority = '<%=account.getAuthority() %>';
 if(authority == 1){

@@ -5,6 +5,17 @@
 "http://www.w3.org/TR/html4/loose.dtd">
 <%
 %>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>ショッピングサイト</title>
+<link href="${pageContext.request.contextPath}\css\menu.css" rel="stylesheet">
+</head>
+<body>
+	<div id="wrapper">
+   	 <div class="top-column"><%@ include file="/WEB-INF/header.jsp"%></div>
+		<div class="left-column"><%@ include file="/WEB-INF/menu.jsp"%></div>
+		<div class="right-column">
 <h4>商品の新規登録</h4>
 <form action="/shopping/product_regist" method="post">
 <div style="float:left;">商品名 :<br>商品説明 ：<br>価格:<br>イメージ：</div>
@@ -24,3 +35,7 @@
 <form action="/shopping/image_regist" enctype="multipart/form-data" method="post">
 	<button name="buttonType" value="image_regist">イメージを追加する</button>
 </form>
+</div>
+</div>
+</body>
+</html>

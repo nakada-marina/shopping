@@ -7,6 +7,17 @@
 // Get_SessionScope
 String errorFlg = (String)request.getAttribute("errorFlg");
 %>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>ショッピングサイト</title>
+<link href="${pageContext.request.contextPath}\css\menu.css" rel="stylesheet">
+</head>
+<body>
+	<div id="wrapper">
+   	 <div class="top-column"><%@ include file="/WEB-INF/header.jsp"%></div>
+		<div class="left-column"><%@ include file="/WEB-INF/menu.jsp"%></div>
+		<div class="right-column">
 <h4>ログインしてください。</h4>
 <form action="/shopping/dologin" method="post">
 <c:if test="${errorFlg == '1' }" >
@@ -25,3 +36,7 @@ String errorFlg = (String)request.getAttribute("errorFlg");
 <form action="/shopping/index" method="post">
 <button name="buttonType" value="account_regist">アカウントを新規登録する</button>
 </form>
+		</div>
+	</div>
+</body>
+</html>

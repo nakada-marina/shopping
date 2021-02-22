@@ -5,6 +5,17 @@
 "http://www.w3.org/TR/html4/loose.dtd">
 <%
 %>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>ショッピングサイト</title>
+<link href="${pageContext.request.contextPath}\css\menu.css" rel="stylesheet">
+</head>
+<body>
+	<div id="wrapper">
+   	 <div class="top-column"><%@ include file="/WEB-INF/header.jsp"%></div>
+		<div class="left-column"><%@ include file="/WEB-INF/menu.jsp"%></div>
+		<div class="right-column">
 <h4>商品の検索</h4>
 <form action="/shopping/product_search" method="post">
 <div style="float:left;">サーチ :&nbsp;&nbsp;&nbsp;<br></div>
@@ -30,3 +41,7 @@
 	</c:forEach>
 </table>
 </form>
+</div>
+</div>
+</body>
+</html>
