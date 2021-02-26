@@ -34,9 +34,7 @@ AccountBean account = (AccountBean)session.getAttribute("account");
 <button name="account_delete" value="account_delete">削除</button>
 <input type="text" value="${account.getUser_id()}" name="id" placeholder="姓" maxlength="15" hidden><br>
 </form>
-<form action="/shopping/index" method="post">
-<button name="buttonType" value="account_management">戻る</button>
-</form>
+<a href="show_account_change?click=1">戻る</a><br>
 		</div>
 	</div>
 </body>

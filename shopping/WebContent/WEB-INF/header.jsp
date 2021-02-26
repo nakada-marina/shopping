@@ -10,20 +10,13 @@ AccountBean name = (AccountBean)session.getAttribute("account");
 %>
 <h1>ショッピングサイト</h1>
 <% if(!(name == null)) {%>
-<form action="/shopping/index" method="post">
-<button name="buttonType" value="account_management">アカウント管理</button>
-</form>
-<form action="/shopping/index" method="post">
-<button name="buttonType" value="logout">ログアウトする</button>
-</form>
+<a href="account_management">アカウント管理画面</a>
+<!-- ログアウト時。 -->
+<a href="login.jsp">ログアウトする</a>
 <span>いらっしゃいませ${account.getName()}さん！</span>
 <%} else {%>
-<form action="/shopping/index" method="post">
-<button name="buttonType" value="index">アカウントを登録する</button>
-</form>
-<form action="/shopping/index" method="post">
-<button name="buttonType" value="index">ログインする</button>
-</form>
+<a href="account_regist.jsp">アカウントを登録する</a>
+<a href="login.jsp">ログインする</a>
 <span>いらっしゃいませ！</span>
 <%}%>
 <br><br>

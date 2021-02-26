@@ -1,8 +1,6 @@
 package controller;
 
 import java.io.IOException;
-import java.sql.SQLException;
-import java.util.List;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -20,32 +18,32 @@ import service.AccountService;
 	 */
 	@WebServlet("/doRegist")
 	public class RegistAccountServlet extends HttpServlet {
-		
+
 		@Override
 		protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-			
+
 			// Serviceの呼び出し
 			AccountService accountService = new AccountService();
-			
+
 			// 入力内容が正しければ、DBに登録する
 			AccountBean accountBean = new AccountBean();
 			accountBean = accountService.checkRegistInfo(req);
-			
+
 			// 成功の場合
 			if(!(accountBean == null)){
-				
+
 				//有効の場合 セッション情報に、アカウント情報をセットする
 				HttpSession session = req.getSession(true);
 				session.setAttribute("account", accountBean);
-				
+
 				// アカウント管理画面へ遷移する
 				req.setAttribute("url","account_management");
-				req.getRequestDispatcher("/index.jsp").forward(req, resp);
-				
+				req.getRequestDispatcher("./WEB-INF/account/account_management.jsp").forward(req, resp);
+
 			}else {
 				// TODO アカウントが無効である場合、とにかくエラーを画面に表示する。
-				req.setAttribute("url","account_regist");
-				req.getRequestDispatcher("/index.jsp").forward(req, resp);
-			}	
+				req.setAttribute("errorFlg","1");
+				req.getRequestDispatcher("/login.jsp").forward(req, resp);
+			}
 		}
 	}

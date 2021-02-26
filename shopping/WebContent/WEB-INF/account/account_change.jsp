@@ -33,9 +33,7 @@ AccountBean account = (AccountBean)session.getAttribute("account");
 <button name="account_change" value="account_change">変更</button>
 <input type="text" value="${account.getUser_id()}" name="id" placeholder="姓" maxlength="15" hidden><br>
 </form>
-<form action="/shopping/index" method="post">
-<button name="buttonType" value="account_management">戻る</button>
-</form>
+<a href="show_account_change?click=1">戻る</a><br>
 </div>
 </div>
 </body>

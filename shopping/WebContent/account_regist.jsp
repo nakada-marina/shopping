@@ -34,7 +34,7 @@
 </div>
 <button name="doRegist" value="doRegist">登録</button><br>
 </form>
-<form action="/shopping/index" method="post">
+<form action="/shopping/lohin" method="post">
 <button name="back" value="back">戻る</button>
 </form>
 		</div>
